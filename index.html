@@ -12,11 +12,14 @@
       }
       body {
         background: #000;
-        background: url('srpr_bg.jpg');
         background-size: cover;
         display: flex;
         justify-content: center;
         align-items: center;
+        -webkit-transition: background 500ms ease-out;
+        -moz-transition: background 500ms ease-out;
+        -o-transition: background 500ms ease-out;
+        transition: background 500ms ease-out;
       }
       h1 {
         padding-top: 20px;
@@ -666,6 +669,31 @@
         }
       }
     </style>
+    <script>
+      +function(){
+        pictures = [{
+          src: 'photo-1449182325215-d517de72c42d.jpg',
+          link: 'https://unsplash.com/photos/YD1uvthZwg4',
+          by: 'Jon Flobrant'
+        },{
+          src: '3CoEETpvQYO8x60lnZSA_rue.jpg',
+          link: 'https://unsplash.com/photos/2aWEwBGSqR8',
+          by: 'Oscar Nilsson'
+        },{
+          src: 'photo-1467173572719-f14b9fb86e5f.jpg',
+          link: 'https://unsplash.com/photos/_4Ib-a8g9aA',
+          by: 'Teddy Kelley'
+        },{
+          src: 'srpr_bg.jpg',
+          link: 'https://unsplash.com/?photo=tmp3sxAl-DI',
+          by: 'Tobias van Schneider'
+        }]
+        random_picture = pictures[Math.floor(Math.random() * (pictures.length))]
+        document.getElementsByTagName("body")[0].style.backgroundImage = 'url("' + random_picture.src + '")';
+        
+        console.log('Random background is made by ' + random_picture.by + ' and it\'s available here: ' + random_picture.link)
+      }();
+    </script>
   </head>
   <body>
     <h1>
